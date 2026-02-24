@@ -16,20 +16,20 @@ public class EnrollmentController {
 
     private final EnrollmentService enrollmentService;
 
-    @PostMapping("/{studentId}/{courseCode}")
+    @PostMapping("/{studentId:.+}/{courseCode:.+}")
     @PreAuthorize("hasAnyRole('ADMIN', 'STUDENT')")
     public ResponseEntity<Enrollment> enroll(@PathVariable String studentId, @PathVariable String courseCode) {
         return ResponseEntity.ok(enrollmentService.enrollStudent(studentId, courseCode));
     }
 
-    @DeleteMapping("/{studentId}/{courseCode}")
+    @DeleteMapping("/{studentId:.+}/{courseCode:.+}")
     @PreAuthorize("hasAnyRole('ADMIN', 'STUDENT')")
     public ResponseEntity<Void> drop(@PathVariable String studentId, @PathVariable String courseCode) {
         enrollmentService.dropCourse(studentId, courseCode);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/student/{studentId}")
+    @GetMapping("/student/{studentId:.+}")
     @PreAuthorize("hasAnyRole('ADMIN', 'FACULTY', 'STUDENT')")
     public ResponseEntity<List<Enrollment>> getStudentEnrollments(@PathVariable String studentId) {
         return ResponseEntity.ok(enrollmentService.getEnrollmentsForStudent(studentId));
@@ -48,7 +48,7 @@ public class EnrollmentController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/admin/force/{studentId}/{courseCode}")
+    @PostMapping("/admin/force/{studentId:.+}/{courseCode:.+}")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Enrollment> forceEnroll(@PathVariable String studentId, @PathVariable String courseCode) {
         return ResponseEntity.ok(enrollmentService.forceEnroll(studentId, courseCode));

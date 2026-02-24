@@ -22,7 +22,7 @@ public class StudentController {
         return ResponseEntity.ok(studentService.getAllStudents());
     }
 
-    @GetMapping("/{studentId}")
+    @GetMapping("/{studentId:.+}")
     @PreAuthorize("hasAnyRole('ADMIN', 'FACULTY', 'STUDENT')")
     public ResponseEntity<Student> getStudentById(@PathVariable String studentId) {
         return ResponseEntity.ok(studentService.getStudentById(studentId));
@@ -47,7 +47,7 @@ public class StudentController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/{studentId}/progress")
+    @GetMapping("/{studentId:.+}/progress")
     @PreAuthorize("hasAnyRole('ADMIN', 'FACULTY', 'STUDENT')")
     public ResponseEntity<List<String>> getRequiredCourses(@PathVariable String studentId) {
         return ResponseEntity.ok(studentService.getRequiredCourses(studentId));
