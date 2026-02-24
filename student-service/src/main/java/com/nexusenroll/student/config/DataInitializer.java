@@ -23,62 +23,48 @@ public class DataInitializer implements CommandLineRunner {
         if (studentRepository.count() == 0) {
             log.info("Seeding initial student data...");
 
-            Map<String, String> grades1 = new HashMap<>();
-            grades1.put("CS100", "A");
-
             Student s1 = Student.builder()
-                    .studentId("S1001")
+                    .studentId("kasun.p")
                     .firstName("Kasun")
                     .lastName("Perera")
                     .email("kasun.p@nexusenroll.edu")
                     .degreeProgram("Software Engineering")
                     .totalCredits(3)
-                    .courseGrades(grades1)
+                    .courseGrades(new HashMap<>() {{ put("CS100", "A"); }})
                     .build();
 
-            Map<String, String> grades2 = new HashMap<>();
-            grades2.put("CS100", "A-");
-            grades2.put("MAT101", "B+");
-
             Student s2 = Student.builder()
-                    .studentId("S1002")
+                    .studentId("dilini.s")
                     .firstName("Dilini")
                     .lastName("Silva")
                     .email("dilini.s@nexusenroll.edu")
                     .degreeProgram("Computer Science")
                     .totalCredits(33)
-                    .courseGrades(grades2)
+                    .courseGrades(new HashMap<>() {{ put("CS100", "A-"); put("MAT101", "B+"); }})
                     .build();
 
-            Map<String, String> grades3 = new HashMap<>();
-            grades3.put("CS100", "B");
-
             Student s3 = Student.builder()
-                    .studentId("S1003")
+                    .studentId("nimal.j")
                     .firstName("Nimal")
                     .lastName("Jayasekara")
                     .email("nimal.j@nexusenroll.edu")
                     .degreeProgram("Information Technology")
                     .totalCredits(18)
-                    .courseGrades(grades3)
+                    .courseGrades(new HashMap<>() {{ put("CS100", "B"); }})
                     .build();
 
-            Map<String, String> grades4 = new HashMap<>();
-            grades4.put("CS100", "A");
-            grades4.put("CS101", "B");
-
             Student s4 = Student.builder()
-                    .studentId("S1004")
+                    .studentId("tharushi.f")
                     .firstName("Tharushi")
                     .lastName("Fernando")
                     .email("tharushi.f@nexusenroll.edu")
                     .degreeProgram("Artificial Intelligence")
                     .totalCredits(48)
-                    .courseGrades(grades4)
+                    .courseGrades(new HashMap<>() {{ put("CS100", "A"); put("CS101", "B"); }})
                     .build();
 
             studentRepository.saveAll(Arrays.asList(s1, s2, s3, s4));
-            log.info("Successfully seeded 4 Sri Lankan students.");
+            log.info("Successfully seeded 4 Sri Lankan students matching Auth users.");
         } else {
             log.info("Student database already contains data. Skipping seeding.");
         }

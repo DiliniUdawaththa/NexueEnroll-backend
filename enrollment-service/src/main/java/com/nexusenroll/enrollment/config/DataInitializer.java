@@ -22,31 +22,46 @@ public class DataInitializer implements CommandLineRunner {
         if (enrollmentRepository.count() == 0) {
             log.info("Seeding initial enrollment data...");
 
-            // Kasun (S1001) enrolled in CS101
+            // Kasun, Dilini, Nimal enrolled in CS101 (Capacity 3)
             Enrollment e1 = Enrollment.builder()
-                    .studentId("S1001")
+                    .studentId("kasun.p")
                     .courseCode("CS101")
                     .enrollmentDate(LocalDateTime.now())
                     .status(Enrollment.EnrollmentStatus.CONFIRMED)
                     .build();
 
-            // Dilini (S1002) enrolled in CS101 and CS202
             Enrollment e2 = Enrollment.builder()
-                    .studentId("S1002")
+                    .studentId("dilini.s")
                     .courseCode("CS101")
                     .enrollmentDate(LocalDateTime.now())
                     .status(Enrollment.EnrollmentStatus.CONFIRMED)
                     .build();
 
-            Enrollment enrollment3 = Enrollment.builder()
-                    .studentId("S1002")
+            Enrollment e3 = Enrollment.builder()
+                    .studentId("nimal.j")
+                    .courseCode("CS101")
+                    .enrollmentDate(LocalDateTime.now())
+                    .status(Enrollment.EnrollmentStatus.CONFIRMED)
+                    .build();
+
+            // Tharushi waitlisted for CS101
+            Enrollment e4 = Enrollment.builder()
+                    .studentId("tharushi.f")
+                    .courseCode("CS101")
+                    .enrollmentDate(LocalDateTime.now().plusMinutes(5))
+                    .status(Enrollment.EnrollmentStatus.WAITLISTED)
+                    .build();
+
+            // Dilini also in CS202
+            Enrollment e5 = Enrollment.builder()
+                    .studentId("dilini.s")
                     .courseCode("CS202")
                     .enrollmentDate(LocalDateTime.now())
                     .status(Enrollment.EnrollmentStatus.CONFIRMED)
                     .build();
 
-            enrollmentRepository.saveAll(Arrays.asList(e1, e2, enrollment3));
-            log.info("Successfully seeded 3 enrollments.");
+            enrollmentRepository.saveAll(Arrays.asList(e1, e2, e3, e4, e5));
+            log.info("Successfully seeded 5 enrollments (4 for CS101, 1 for CS202).");
         }
     }
 }

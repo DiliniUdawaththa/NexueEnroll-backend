@@ -31,32 +31,26 @@ public class DataInitializer implements CommandLineRunner {
                     .build());
 
             // Faculty
-            userRepository.save(User.builder()
-                    .username("rohan.g")
-                    .password(passwordEncoder.encode("faculty123"))
-                    .roles(Set.of("ROLE_FACULTY"))
-                    .build());
-            
-            userRepository.save(User.builder()
-                    .username("priyantha.s")
-                    .password(passwordEncoder.encode("faculty123"))
-                    .roles(Set.of("ROLE_FACULTY"))
-                    .build());
+            String[] faculty = {"rohan.g", "priyantha.s", "kumari.p", "sanath.j"};
+            for (String f : faculty) {
+                userRepository.save(User.builder()
+                        .username(f)
+                        .password(passwordEncoder.encode("faculty123"))
+                        .roles(Set.of("ROLE_FACULTY"))
+                        .build());
+            }
 
             // Students
-            userRepository.save(User.builder()
-                    .username("kasun.p")
-                    .password(passwordEncoder.encode("student123"))
-                    .roles(Set.of("ROLE_STUDENT"))
-                    .build());
+            String[] students = {"kasun.p", "dilini.s", "nimal.j", "tharushi.f"};
+            for (String s : students) {
+                userRepository.save(User.builder()
+                        .username(s)
+                        .password(passwordEncoder.encode("student123"))
+                        .roles(Set.of("ROLE_STUDENT"))
+                        .build());
+            }
 
-            userRepository.save(User.builder()
-                    .username("dilini.s")
-                    .password(passwordEncoder.encode("student123"))
-                    .roles(Set.of("ROLE_STUDENT"))
-                    .build());
-
-            log.info("Successfully seeded 5 users (1 admin, 2 faculty, 2 students).");
+            log.info("Successfully seeded users (1 admin, 4 faculty, 4 students).");
         }
     }
 }

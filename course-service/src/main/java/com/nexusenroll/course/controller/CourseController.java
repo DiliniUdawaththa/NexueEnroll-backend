@@ -85,14 +85,14 @@ public class CourseController {
     }
 
     @PostMapping("/{courseCode}/increment")
-    @PreAuthorize("hasAnyRole('ADMIN', 'FACULTY')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'FACULTY', 'STUDENT')")
     public ResponseEntity<Void> incrementEnrollment(@PathVariable String courseCode) {
         courseService.incrementEnrollment(courseCode);
         return ResponseEntity.ok().build();
     }
 
     @PostMapping("/{courseCode}/decrement")
-    @PreAuthorize("hasAnyRole('ADMIN', 'FACULTY')")
+    @PreAuthorize("hasAnyRole('ADMIN', 'FACULTY', 'STUDENT')")
     public ResponseEntity<Void> decrementEnrollment(@PathVariable String courseCode) {
         courseService.decrementEnrollment(courseCode);
         return ResponseEntity.ok().build();
