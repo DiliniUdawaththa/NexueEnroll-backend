@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: nexus-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - nexus-net
+
+  # RabbitMQ Message Broker
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: nexus-rabbitmq
+    ports:
+      - "5672:5672"   # AMQP protocol
+      - "15672:15672" # Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    networks:
+      - nexus-net
+
+  # Zipkin (Optional - for distributed tracing if needed later)
+  # zipkin:
+  #   image: openzipkin/zipkin
+  #   container_name: nexus-zipkin
+  #   ports:
+  #     - "9411:9411"
+  #   networks:
+  #     - nexus-net
+
+networks:
+  nexus-net:
+    driver: bridge
+
+volumes:
+  mysql_data:

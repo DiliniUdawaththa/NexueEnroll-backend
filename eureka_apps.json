@@ -1,0 +1,238 @@
+﻿{
+    "applications":  {
+                         "versions__delta":  "1",
+                         "apps__hashcode":  "UP_5_",
+                         "application":  [
+                                             {
+                                                 "name":  "ENROLLMENT-SERVICE",
+                                                 "instance":  [
+                                                                  {
+                                                                      "instanceId":  "LAPTOP-C0ISNB6L.mshome.net:enrollment-service:8083",
+                                                                      "hostName":  "LAPTOP-C0ISNB6L.mshome.net",
+                                                                      "app":  "ENROLLMENT-SERVICE",
+                                                                      "ipAddr":  "172.18.208.1",
+                                                                      "status":  "UP",
+                                                                      "overriddenStatus":  "UNKNOWN",
+                                                                      "port":  {
+                                                                                   "$":  8083,
+                                                                                   "@enabled":  "true"
+                                                                               },
+                                                                      "securePort":  {
+                                                                                         "$":  443,
+                                                                                         "@enabled":  "false"
+                                                                                     },
+                                                                      "countryId":  1,
+                                                                      "dataCenterInfo":  {
+                                                                                             "@class":  "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+                                                                                             "name":  "MyOwn"
+                                                                                         },
+                                                                      "leaseInfo":  {
+                                                                                        "renewalIntervalInSecs":  30,
+                                                                                        "durationInSecs":  90,
+                                                                                        "registrationTimestamp":  1771762541879,
+                                                                                        "lastRenewalTimestamp":  1771764592033,
+                                                                                        "evictionTimestamp":  0,
+                                                                                        "serviceUpTimestamp":  1771762541364
+                                                                                    },
+                                                                      "metadata":  {
+                                                                                       "management.port":  "8083"
+                                                                                   },
+                                                                      "homePageUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8083/",
+                                                                      "statusPageUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8083/actuator/info",
+                                                                      "healthCheckUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8083/actuator/health",
+                                                                      "vipAddress":  "enrollment-service",
+                                                                      "secureVipAddress":  "enrollment-service",
+                                                                      "isCoordinatingDiscoveryServer":  "false",
+                                                                      "lastUpdatedTimestamp":  "1771762541879",
+                                                                      "lastDirtyTimestamp":  "1771762541296",
+                                                                      "actionType":  "ADDED"
+                                                                  }
+                                                              ]
+                                             },
+                                             {
+                                                 "name":  "API-GATEWAY",
+                                                 "instance":  [
+                                                                  {
+                                                                      "instanceId":  "LAPTOP-C0ISNB6L.mshome.net:api-gateway:8080",
+                                                                      "hostName":  "LAPTOP-C0ISNB6L.mshome.net",
+                                                                      "app":  "API-GATEWAY",
+                                                                      "ipAddr":  "172.18.208.1",
+                                                                      "status":  "UP",
+                                                                      "overriddenStatus":  "UNKNOWN",
+                                                                      "port":  {
+                                                                                   "$":  8080,
+                                                                                   "@enabled":  "true"
+                                                                               },
+                                                                      "securePort":  {
+                                                                                         "$":  443,
+                                                                                         "@enabled":  "false"
+                                                                                     },
+                                                                      "countryId":  1,
+                                                                      "dataCenterInfo":  {
+                                                                                             "@class":  "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+                                                                                             "name":  "MyOwn"
+                                                                                         },
+                                                                      "leaseInfo":  {
+                                                                                        "renewalIntervalInSecs":  30,
+                                                                                        "durationInSecs":  90,
+                                                                                        "registrationTimestamp":  1771762376623,
+                                                                                        "lastRenewalTimestamp":  1771764573866,
+                                                                                        "evictionTimestamp":  0,
+                                                                                        "serviceUpTimestamp":  1771762375874
+                                                                                    },
+                                                                      "metadata":  {
+                                                                                       "management.port":  "8080"
+                                                                                   },
+                                                                      "homePageUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8080/",
+                                                                      "statusPageUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8080/actuator/info",
+                                                                      "healthCheckUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8080/actuator/health",
+                                                                      "vipAddress":  "api-gateway",
+                                                                      "secureVipAddress":  "api-gateway",
+                                                                      "isCoordinatingDiscoveryServer":  "false",
+                                                                      "lastUpdatedTimestamp":  "1771762376623",
+                                                                      "lastDirtyTimestamp":  "1771762375677",
+                                                                      "actionType":  "ADDED"
+                                                                  }
+                                                              ]
+                                             },
+                                             {
+                                                 "name":  "STUDENT-SERVICE",
+                                                 "instance":  [
+                                                                  {
+                                                                      "instanceId":  "LAPTOP-C0ISNB6L.mshome.net:student-service:8081",
+                                                                      "hostName":  "LAPTOP-C0ISNB6L.mshome.net",
+                                                                      "app":  "STUDENT-SERVICE",
+                                                                      "ipAddr":  "172.18.208.1",
+                                                                      "status":  "UP",
+                                                                      "overriddenStatus":  "UNKNOWN",
+                                                                      "port":  {
+                                                                                   "$":  8081,
+                                                                                   "@enabled":  "true"
+                                                                               },
+                                                                      "securePort":  {
+                                                                                         "$":  443,
+                                                                                         "@enabled":  "false"
+                                                                                     },
+                                                                      "countryId":  1,
+                                                                      "dataCenterInfo":  {
+                                                                                             "@class":  "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+                                                                                             "name":  "MyOwn"
+                                                                                         },
+                                                                      "leaseInfo":  {
+                                                                                        "renewalIntervalInSecs":  30,
+                                                                                        "durationInSecs":  90,
+                                                                                        "registrationTimestamp":  1771762741128,
+                                                                                        "lastRenewalTimestamp":  1771764593181,
+                                                                                        "evictionTimestamp":  0,
+                                                                                        "serviceUpTimestamp":  1771762740614
+                                                                                    },
+                                                                      "metadata":  {
+                                                                                       "management.port":  "8081"
+                                                                                   },
+                                                                      "homePageUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8081/",
+                                                                      "statusPageUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8081/actuator/info",
+                                                                      "healthCheckUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8081/actuator/health",
+                                                                      "vipAddress":  "student-service",
+                                                                      "secureVipAddress":  "student-service",
+                                                                      "isCoordinatingDiscoveryServer":  "false",
+                                                                      "lastUpdatedTimestamp":  "1771762741128",
+                                                                      "lastDirtyTimestamp":  "1771762740548",
+                                                                      "actionType":  "ADDED"
+                                                                  }
+                                                              ]
+                                             },
+                                             {
+                                                 "name":  "NOTIFICATION-SERVICE",
+                                                 "instance":  [
+                                                                  {
+                                                                      "instanceId":  "LAPTOP-C0ISNB6L.mshome.net:notification-service:8084",
+                                                                      "hostName":  "LAPTOP-C0ISNB6L.mshome.net",
+                                                                      "app":  "NOTIFICATION-SERVICE",
+                                                                      "ipAddr":  "172.18.208.1",
+                                                                      "status":  "UP",
+                                                                      "overriddenStatus":  "UNKNOWN",
+                                                                      "port":  {
+                                                                                   "$":  8084,
+                                                                                   "@enabled":  "true"
+                                                                               },
+                                                                      "securePort":  {
+                                                                                         "$":  443,
+                                                                                         "@enabled":  "false"
+                                                                                     },
+                                                                      "countryId":  1,
+                                                                      "dataCenterInfo":  {
+                                                                                             "@class":  "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+                                                                                             "name":  "MyOwn"
+                                                                                         },
+                                                                      "leaseInfo":  {
+                                                                                        "renewalIntervalInSecs":  30,
+                                                                                        "durationInSecs":  90,
+                                                                                        "registrationTimestamp":  1771762579002,
+                                                                                        "lastRenewalTimestamp":  1771764580249,
+                                                                                        "evictionTimestamp":  0,
+                                                                                        "serviceUpTimestamp":  1771762578493
+                                                                                    },
+                                                                      "metadata":  {
+                                                                                       "management.port":  "8084"
+                                                                                   },
+                                                                      "homePageUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8084/",
+                                                                      "statusPageUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8084/actuator/info",
+                                                                      "healthCheckUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8084/actuator/health",
+                                                                      "vipAddress":  "notification-service",
+                                                                      "secureVipAddress":  "notification-service",
+                                                                      "isCoordinatingDiscoveryServer":  "false",
+                                                                      "lastUpdatedTimestamp":  "1771762579002",
+                                                                      "lastDirtyTimestamp":  "1771762578429",
+                                                                      "actionType":  "ADDED"
+                                                                  }
+                                                              ]
+                                             },
+                                             {
+                                                 "name":  "COURSE-SERVICE",
+                                                 "instance":  [
+                                                                  {
+                                                                      "instanceId":  "LAPTOP-C0ISNB6L.mshome.net:course-service:8082",
+                                                                      "hostName":  "LAPTOP-C0ISNB6L.mshome.net",
+                                                                      "app":  "COURSE-SERVICE",
+                                                                      "ipAddr":  "172.18.208.1",
+                                                                      "status":  "UP",
+                                                                      "overriddenStatus":  "UNKNOWN",
+                                                                      "port":  {
+                                                                                   "$":  8082,
+                                                                                   "@enabled":  "true"
+                                                                               },
+                                                                      "securePort":  {
+                                                                                         "$":  443,
+                                                                                         "@enabled":  "false"
+                                                                                     },
+                                                                      "countryId":  1,
+                                                                      "dataCenterInfo":  {
+                                                                                             "@class":  "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo",
+                                                                                             "name":  "MyOwn"
+                                                                                         },
+                                                                      "leaseInfo":  {
+                                                                                        "renewalIntervalInSecs":  30,
+                                                                                        "durationInSecs":  90,
+                                                                                        "registrationTimestamp":  1771762498116,
+                                                                                        "lastRenewalTimestamp":  1771764579452,
+                                                                                        "evictionTimestamp":  0,
+                                                                                        "serviceUpTimestamp":  1771762497599
+                                                                                    },
+                                                                      "metadata":  {
+                                                                                       "management.port":  "8082"
+                                                                                   },
+                                                                      "homePageUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8082/",
+                                                                      "statusPageUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8082/actuator/info",
+                                                                      "healthCheckUrl":  "http://LAPTOP-C0ISNB6L.mshome.net:8082/actuator/health",
+                                                                      "vipAddress":  "course-service",
+                                                                      "secureVipAddress":  "course-service",
+                                                                      "isCoordinatingDiscoveryServer":  "false",
+                                                                      "lastUpdatedTimestamp":  "1771762498116",
+                                                                      "lastDirtyTimestamp":  "1771762497539",
+                                                                      "actionType":  "ADDED"
+                                                                  }
+                                                              ]
+                                             }
+                                         ]
+                     }
+}
