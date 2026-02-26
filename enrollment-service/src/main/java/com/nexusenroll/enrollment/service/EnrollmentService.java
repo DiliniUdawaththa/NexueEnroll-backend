@@ -35,9 +35,14 @@ public class EnrollmentService {
         CourseDTO course = courseClient.getCourse(courseCode);
         List<Enrollment> existingEnrollments = enrollmentRepository.findByStudentId(studentId);
 
-        // 2. Check for Existing Enrollment
-        if (enrollmentRepository.findByStudentIdAndCourseCode(studentId, courseCode).isPresent()) {
-            throw new RuntimeException("Student already enrolled in this course.");
+        // 2. Check for Existing Active Enrollment
+        Optional<Enrollment> existingEnrollment = enrollmentRepository.findByStudentIdAndCourseCode(studentId,
+                courseCode);
+        if (existingEnrollment.isPresent()) {
+            Enrollment.EnrollmentStatus status = existingEnrollment.get().getStatus();
+            if (status == Enrollment.EnrollmentStatus.CONFIRMED || status == Enrollment.EnrollmentStatus.WAITLISTED) {
+                throw new RuntimeException("Student already has an active enrollment in this course.");
+            }
         }
 
         Enrollment.EnrollmentStatus initialStatus = Enrollment.EnrollmentStatus.CONFIRMED;

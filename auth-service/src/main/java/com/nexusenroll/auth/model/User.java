@@ -23,6 +23,9 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
 
+    @Builder.Default
+    private boolean active = true;
+
     @Column(nullable = false)
     private String password;
 

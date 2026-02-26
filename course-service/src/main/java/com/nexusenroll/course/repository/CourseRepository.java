@@ -17,6 +17,8 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
 
     List<Course> findByInstructorNameContainingIgnoreCase(String instructorName);
 
+    List<Course> findByInstructorUsername(String instructorUsername);
+
     @Query("SELECT c FROM Course c WHERE LOWER(c.courseName) LIKE LOWER(CONCAT('%', :keyword, '%')) OR LOWER(c.description) LIKE LOWER(CONCAT('%', :keyword, '%'))")
     List<Course> searchByKeyword(@Param("keyword") String keyword);
 }

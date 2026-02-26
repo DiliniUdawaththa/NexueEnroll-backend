@@ -20,6 +20,10 @@ public class CourseService {
         return courseRepository.findAll();
     }
 
+    public List<Course> getCoursesByInstructorUsername(String username) {
+        return courseRepository.findByInstructorUsername(username);
+    }
+
     public Course getCourseByCode(String courseCode) {
         return courseRepository.findByCourseCode(courseCode)
                 .orElseThrow(() -> new RuntimeException("Course not found: " + courseCode));
@@ -41,6 +45,7 @@ public class CourseService {
         course.setDepartment(courseDetails.getDepartment());
         course.setInstructorName(courseDetails.getInstructorName());
         course.setInstructorId(courseDetails.getInstructorId());
+        course.setInstructorUsername(courseDetails.getInstructorUsername());
         course.setCapacity(courseDetails.getCapacity());
         course.setDayOfWeek(courseDetails.getDayOfWeek());
         course.setStartTime(courseDetails.getStartTime());
