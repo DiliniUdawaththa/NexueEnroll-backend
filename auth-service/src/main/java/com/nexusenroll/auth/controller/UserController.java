@@ -3,6 +3,7 @@ package com.nexusenroll.auth.controller;
 import com.nexusenroll.auth.dto.AuthDto.RegisterRequest;
 import com.nexusenroll.auth.model.User;
 import com.nexusenroll.auth.service.AuthService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -13,6 +14,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/api/users")
+@RequiredArgsConstructor
 public class UserController {
 
     @Autowired
