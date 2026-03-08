@@ -2,7 +2,9 @@ package com.nexusenroll.gateway.config;
 
 import com.nexusenroll.gateway.filter.AuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.gateway.route.Route;
 import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.Buildable;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,8 +27,10 @@ public class GatewayConfig {
                 .route("enrollment-service", r -> r.path("/api/enrollments/**")
                         .filters(f -> f.filter(filter))
                         .uri("lb://enrollment-service"))
-                .route("auth-service", r -> r.path("/api/auth/**")
+                .route("auth-service", r -> r.path("/api/**")
                         .uri("lb://auth-service"))
+//                .route("auth-service", r -> r.path("api/users/**")
+//                        .uri("lb://auth-service"))
                 .build();
     }
 }

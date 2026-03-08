@@ -38,6 +38,8 @@ public class Course {
 
     private Long instructorId;
 
+    private String instructorUsername;
+
     @Column(nullable = false)
     private Integer capacity;
 

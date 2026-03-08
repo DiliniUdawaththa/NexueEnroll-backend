@@ -35,19 +35,52 @@ public class AuthService {
             throw new RuntimeException("Username already exists");
         }
 
+        String password = request.getPassword();
+        if (password == null || password.isEmpty()) {
+            password = "faculty123"; // Default for faculty
+        }
+
         User user = User.builder()
                 .username(request.getUsername())
-                .password(passwordEncoder.encode(request.getPassword()))
+                .password(passwordEncoder.encode(password))
                 .roles(request.getRoles())
+                .active(true)
                 .build();
 
         userRepository.save(user);
     }
 
+    public java.util.List<User> getAllFaculty() {
+        return userRepository.findAll().stream()
+                .filter(u -> u.getRoles().contains("ROLE_FACULTY"))
+                .collect(Collectors.toList());
+    }
+
+    public User updateUser(Long id, User details) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        user.setUsername(details.getUsername());
+        // Password is not updated as per requirements
+        return userRepository.save(user);
+    }
+
+    public void toggleUserStatus(Long id) {
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        user.setActive(!user.isActive());
+        userRepository.save(user);
+    }
+
     public AuthResponse login(LoginRequest request) {
+        User user = userRepository.findByUsername(request.getUsername())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        if (!user.isActive()) {
+            throw new RuntimeException("Account is deactivated. Please contact administrator.");
+        }
+
         Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
-        );
+                new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
 
         String username = authentication.getName();
         Set<String> roles = authentication.getAuthorities().stream()
